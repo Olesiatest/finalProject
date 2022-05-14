@@ -30,6 +30,11 @@ public abstract class BasePage {
         ExpectedConditions.visibilityOfElementLocated(locator));
   }
 
+  protected boolean findElemAttrToBE(By locator, int timeout) {
+    return new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(
+        ExpectedConditions.attributeToBe(locator, "display", "none"));
+  }
+
   protected WebElement findWithWaitPresence(By locator, int timeout) {
     return new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(
         ExpectedConditions.presenceOfElementLocated(locator));

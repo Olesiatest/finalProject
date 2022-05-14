@@ -14,9 +14,6 @@ public class NavigationMenuBlock extends BasePage {
   //input[@class='btn btn-primary float-xs-right hidden-xs-down']
 
 //  Task#2
-  //button[@class='hidden-sm-down btn-unstyle'] - 1
-  //span[@id='language-selector-label']
-  //a[@data-iso-code="uk"]
 
   //Task3
   //div[@id='_desktop_user_info']//span[@class='hidden-sm-down']
