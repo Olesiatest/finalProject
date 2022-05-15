@@ -26,6 +26,10 @@ public class MainPage extends BasePage {
       "//input[@class='btn btn-primary float-xs-right hidden-xs-down']");
   private final By loader = By.xpath("//div[@id='loadingMessage']");
   private final By iframeLocator = By.id("framelive");
+  private final By myAccount = By.xpath("//a[@class='account']");
+  private final By firstnameField = By.id("field-firstname");
+  private final By invalidFormatName = By.xpath("//li[@class='alert alert-danger']");
+
 
   public boolean waitLoadingPage() {
     return findElemAttrToBE(loader, 10);
@@ -42,12 +46,24 @@ public class MainPage extends BasePage {
     return find(textLeftEmailInput).getText();
   }
 
+  public String getInvalidFirstName() {
+    return find(firstnameField).getCssValue("outline-color");
+  }
+
   public String checkTextBottomEmailInput() {
     return find(textBottomEmailInput).getText();
   }
 
   public String checkTextUppercase() {
     return find(textUppercase).getAttribute("value");
+  }
+
+  public boolean checkMyAccount() {
+    return find(myAccount).isDisplayed();
+  }
+
+  public boolean errorInvalidFormatName() {
+    return find(invalidFormatName).isDisplayed();
   }
 
 

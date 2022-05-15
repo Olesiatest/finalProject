@@ -1,6 +1,7 @@
 package blocks;
 
 import FinallProject.BasePage;
+import FinallProject.LoginPage;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,8 @@ public class HeaderBlock extends BasePage {
 
   private final By languageButton = By.xpath("//button[@class='hidden-sm-down btn-unstyle']");
   private final By languageItem = By.xpath("//ul[@class='dropdown-menu hidden-sm-down']/li");
+  private final By signInButton = By.xpath("//div[@class='user-info']/a");
+
 
   public int checkLanguageSize() {
     find(languageButton).click();
@@ -29,5 +32,9 @@ public class HeaderBlock extends BasePage {
     return returnValue;
   }
 
+  public LoginPage clickSignInButton() {
+    find(signInButton).click();
+    return new LoginPage();
+  }
 
 }

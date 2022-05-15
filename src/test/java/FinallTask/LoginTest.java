@@ -1,5 +1,6 @@
 package FinallTask;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
+
 
 }
