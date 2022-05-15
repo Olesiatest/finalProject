@@ -2,6 +2,7 @@ package FinallProject;
 
 import blocks.HeaderBlock;
 import blocks.NavigationMenuBlock;
+import blocks.ProductBlock;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -25,6 +26,12 @@ public class MainPage extends BasePage {
 
   public NavigationMenuBlock getNavigationMenuBlock() {
     return navigationMenuBlock;
+  }
+
+  ProductBlock productBlock = new ProductBlock();
+
+  public ProductBlock getProductBlock() {
+    return productBlock;
   }
 
   private final By textLeftEmailInput = By.xpath("//p[@id='block-newsletter-label']");
