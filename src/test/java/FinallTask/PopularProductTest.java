@@ -17,5 +17,12 @@ public class PopularProductTest extends BaseTest {
 
     boolean checkProductName = mainPage.getProductBlock().isExistProductValue(ProductValues.Name);
     Assertions.assertThat(checkProductName).as("The Name popular product is not exist").isTrue();
+
+    boolean checkProductPrice = mainPage.getProductBlock().isExistProductValue(ProductValues.Price);
+    Assertions.assertThat(checkProductPrice).as("The Price popular product is not exist").isTrue();
+
+    boolean isSumMoreZero = mainPage.getProductBlock().checkSumProduct();
+    Assertions.assertThat(isSumMoreZero).as("The Price popular product is not exist").isTrue();
+
   }
- }
+}
