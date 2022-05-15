@@ -1,6 +1,7 @@
 package FinallProject;
 
 import blocks.HeaderBlock;
+import blocks.NavigationMenuBlock;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,6 +19,12 @@ public class MainPage extends BasePage {
 
   public HeaderBlock getHeaderBlock() {
     return headerBlock;
+  }
+
+  NavigationMenuBlock navigationMenuBlock = new NavigationMenuBlock();
+
+  public NavigationMenuBlock getNavigationMenuBlock() {
+    return navigationMenuBlock;
   }
 
   private final By textLeftEmailInput = By.xpath("//p[@id='block-newsletter-label']");
