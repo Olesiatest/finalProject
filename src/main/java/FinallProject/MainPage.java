@@ -43,6 +43,7 @@ public class MainPage extends BasePage {
   private final By myAccount = By.xpath("//a[@class='account']");
   private final By firstnameField = By.id("field-firstname");
   private final By invalidFormatName = By.xpath("//li[@class='alert alert-danger']");
+  private final By pricesDropProduct = By.xpath("//a[@id='link-product-page-prices-drop-1']");
 
 
   public boolean waitLoadingPage() {
@@ -78,6 +79,12 @@ public class MainPage extends BasePage {
 
   public boolean errorInvalidFormatName() {
     return find(invalidFormatName).isDisplayed();
+  }
+
+  public ProductsPage clickPricesDropProduct() {
+    Utils.scrollInBottomPage(getDriver());
+    find(pricesDropProduct).click();
+    return new ProductsPage();
   }
 
 

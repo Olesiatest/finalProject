@@ -10,13 +10,16 @@ public class ProductBlock extends BasePage {
   private final By productItem = By.xpath("//div[contains(@class,'thumbnail-container')]");
   private final By productName = By.xpath("//h3[contains(@class,'product-title')]");
   private final By productPrice = By.xpath("//span[@class='price']");
+  private final By discountPrice = By.xpath("//span[@class='regular-price']");
+  private final By discountPercent = By.xpath("//li[@class='product-flag discount']");
+
 
   public int checkProductSize() {
     return findElements(productItem).size();
   }
 
   public enum ProductValues {
-    Name, Price
+    Name, Price, Discount
   }
 
   public boolean isExistProductValue(ProductValues value) {
@@ -25,6 +28,8 @@ public class ProductBlock extends BasePage {
         return checkProductValue(productName);
       case Price:
         return checkProductValue(productPrice);
+      case Discount:
+        return checkProductValue(discountPrice);
       default:
         throw new IllegalStateException("Unknown value");
     }
@@ -61,4 +66,6 @@ public class ProductBlock extends BasePage {
       return false;
     }
   }
+
+
 }
