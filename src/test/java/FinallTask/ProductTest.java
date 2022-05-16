@@ -17,8 +17,7 @@ public class ProductTest extends BaseTest {
     boolean isExistDiscountPrice = mainPage.getProductBlock()
         .isExistProductValue(ProductValues.Discount);
     Assertions.assertThat(isExistDiscountPrice).as("The discount price is not correct").isTrue();
-
+    boolean checkDiscount = mainPage.getProductBlock().checkDiscountPrice();
+    Assertions.assertThat(checkDiscount).as("The calculate discount price is not correct").isTrue();
   }
-
-
 }
