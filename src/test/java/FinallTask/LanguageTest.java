@@ -14,9 +14,5 @@ public class LanguageTest extends BaseTest {
         .isEqualTo(languageSize);
     boolean isExistUkraineLanguage = mainPage.getHeaderBlock().isExistLanguage("uk");
     Assertions.assertThat(isExistUkraineLanguage).as("It is not Ukraine Language").isTrue();
-
-
   }
-
-
 }

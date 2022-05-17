@@ -44,6 +44,7 @@ public class MainPage extends BasePage {
   private final By firstnameField = By.id("field-firstname");
   private final By invalidFormatName = By.xpath("//li[@class='alert alert-danger']");
   private final By pricesDropProduct = By.xpath("//a[@id='link-product-page-prices-drop-1']");
+  private final By allProducts = By.xpath("//a[contains(@class,'all-product-link')]");
 
 
   public boolean waitLoadingPage() {
@@ -87,5 +88,9 @@ public class MainPage extends BasePage {
     return new ProductsPage();
   }
 
-
+  public ProductsPage clickAllProducts() {
+    Utils.scrollToElement(getDriver(), find(allProducts));
+    find(allProducts).click();
+    return new ProductsPage();
+  }
 }

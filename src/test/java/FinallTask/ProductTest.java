@@ -13,7 +13,6 @@ public class ProductTest extends BaseTest {
     boolean isExistNewPrice = mainPage.switchToIframe().clickPricesDropProduct().getProductBlock()
         .isExistProductValue(ProductValues.Price);
     Assertions.assertThat(isExistNewPrice).as("The price is not correct").isTrue();
-
     boolean isExistDiscountPrice = mainPage.getProductBlock()
         .isExistProductValue(ProductValues.Discount);
     Assertions.assertThat(isExistDiscountPrice).as("The discount price is not correct").isTrue();

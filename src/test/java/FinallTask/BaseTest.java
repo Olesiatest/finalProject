@@ -23,17 +23,14 @@ public class BaseTest {
     driver.manage().window().maximize();
     driver.get("https://demo.prestashop.com/");
     BasePage.setDriver(driver);
-
     MainPage mainPage = new MainPage();
     boolean isLoadingPage = mainPage.waitLoadingPage();
     Assertions.assertThat(isLoadingPage).as("Page is not loading").isTrue();
-
   }
 
   @AfterMethod
   public void closeDriver() {
     BasePage.getDriver().quit();
   }
-
 }
 

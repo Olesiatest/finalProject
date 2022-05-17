@@ -33,7 +33,6 @@ public class NavigationMenuBlock extends BasePage {
 
   public boolean checkSubMenu(By locator) {
     return find(topMenu).findElement(locator).findElement(subMenu).isDisplayed();
-
   }
 
   public void hoverOnCategory(By locator) {
@@ -64,9 +63,6 @@ public class NavigationMenuBlock extends BasePage {
         if (!checkSubMenu(artCategory)) {
           return false;
         }
-//        List<WebElement> accessoriesMenuItems = findElements(dropdownItemMenuAccessories);
-//        List<String> checkListDropdownAccessories = Arrays.asList("STATIONERY", "HOME ACCESSORIES");
-//        return checkSubMenuCategories(accessoriesMenuItems, checkListDropdownAccessories);
       default:
         throw new IllegalStateException("Unknown category");
     }

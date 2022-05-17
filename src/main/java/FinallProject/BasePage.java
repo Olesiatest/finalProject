@@ -20,7 +20,6 @@ public abstract class BasePage {
     return driver;
   }
 
-
   protected WebElement find(By locator) {
     return getDriver().findElement(locator);
   }
@@ -40,9 +39,19 @@ public abstract class BasePage {
         ExpectedConditions.presenceOfElementLocated(locator));
   }
 
+  protected double truncate(double number, int precision) {
+    double prec = Math.pow(10, precision);
+    int integerPart = (int) number;
+    double fractionalPart = number - integerPart;
+    fractionalPart = fractionalPart * prec;
+    int fractPart = (int) fractionalPart;
+    fractionalPart = (double) (integerPart) + (double) (fractPart) / prec;
+    return fractionalPart;
+  }
 
   protected List<WebElement> findElements(By locator) {
     return getDriver().findElements(locator);
   }
 }
+
 
